@@ -72,7 +72,12 @@ namespace PhotoGallery.Controllers
                 _context.Add(contactUs);
                 await _context.SaveChangesAsync();                
             }
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Success", "Gallery");
+        }
+
+        public IActionResult Success()
+        {
+            return View();
         }
     }
 }
