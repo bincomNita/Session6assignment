@@ -1,0 +1,39 @@
+﻿@model IEnumerable<GalleryItem>
+@{
+    ViewData["Title"] = "All Gallery Images";
+
+}
+<h2>Photo Gallery</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <td> @Html.DisplayName("Id")</td>
+                    <td> @Html.DisplayName("Image Path")</td>
+                </tr>
+
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>
+
+                            @Html.DisplayFor(Model => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Model => item.ImagePath)
+                        </td>
+                      @*   <td>
+                            <img src="@Url.Content("~/" + item.ImagePath)" style="width:200px;height:auto;" />
+                            @* <img src="@item.ImagePath" style="width:200px;height:auto;" /> 
+                        </td> *@
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+
